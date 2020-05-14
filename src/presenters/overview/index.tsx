@@ -26,11 +26,16 @@ export const Overview = () => {
   }
 
   return (
-    <div className={styles.overview}>
+    <div data-test="component-Overview" className={styles.overview}>
       {empty ? (
         <TodoEmpty message={"No Todos"} />
       ) : (
-        <TodoList isLazyHandler={lazy} remove={remove} router={router} todos={interactor.todos} />
+        <TodoList
+          isLazyHandler={lazy}
+          remove={remove}
+          router={router}
+          todos={interactor.todos}
+        />
       )}
       <button onClick={add}>Add New</button>
     </div>
