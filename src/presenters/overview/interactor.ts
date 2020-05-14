@@ -5,7 +5,7 @@ import * as Models from "./models"
 import * as Worker from "./worker"
 
 export class Interactor {
-  todos: Array<TodoItem> = []
+  todos: Array<TodoItem> = store.getState().todo.todos || []
 
   constructor() {
     this.addTodo = this.addTodo.bind(this)

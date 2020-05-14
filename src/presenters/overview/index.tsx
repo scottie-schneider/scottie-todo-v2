@@ -28,9 +28,10 @@ export const Overview = () => {
   return (
     <div data-test="component-Overview" className={styles.overview}>
       {empty ? (
-        <TodoEmpty message={"No Todos"} />
+        <TodoEmpty data-test="component-Empty" message={"No Todos"} />
       ) : (
         <TodoList
+          data-test="component-List"
           isLazyHandler={lazy}
           remove={remove}
           router={router}
